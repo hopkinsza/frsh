@@ -6,37 +6,23 @@ import (
 	//"math/big"
 )
 
-//Bool bool
-//Rat *big.Rat
-//String string
-
-//%token <String> IDENT
-//%token <Bool> BOOL
-//%token <Rat> INT
-//%token <Rat> RAT
-//%token <String> STRING
-//%token <String> RAWSTRING
-//%token <String> INVALID
-
 %}
 
-// bool, rat, string, or object
 %union {
-	val interface{}
+	v variable
+	varname string
 }
 
-%token <val> IDENT
-%token <val> BOOL
-%token <val> INT
-%token <val> RAT
-%token <val> STRING
-%token <val> RAWSTRING
-%token <val> INVALID
+%token IDENT
+%token BOOL
+%token INT
+%token RAT
+%token STRING
+%token RAWSTRING
+%token INVALID
 
 // keywords
 %token IF
-
-%type <val> literal
 
 %%
 
